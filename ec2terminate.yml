@@ -1,0 +1,13 @@
+---
+- name: Instance terminating
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+  - name: Terminating ec2 instances
+    ec2:
+      instance_ids: i-081299b0f521a0a98
+      region: us-east-1
+      state: terminate
+      wait: yes
+
